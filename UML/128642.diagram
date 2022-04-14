@@ -1,0 +1,46 @@
+format 224
+
+classcanvas 128002 class_ref 128386 // Medical_Assistant
+  simpleclassdiagramsettings end
+  xyz 56 84 2000
+end
+classcanvas 128386 class_ref 128770 // Diagnostician
+  simpleclassdiagramsettings end
+  xyz 676 304 2000
+end
+classcanvas 128514 class_ref 128898 // Ward_Clerk
+  simpleclassdiagramsettings end
+  xyz 664 421 2000
+end
+subject 128642 ""
+  xyzwh 218 61 2000 286 669
+usecasecanvas 128898 usecase_ref 129026 // Adds Doctors Medical Report
+  xyzwh 278 121 3005 173 57 max_width 16 label_xy 310 133
+end
+usecasecanvas 129282 usecase_ref 129154 // Assigns Patient to Diagnosis
+  xyzwh 297 218 3005 147 67 max_width 15 label_xy 315 235
+end
+usecasecanvas 129794 usecase_ref 129282 // Assigns Patient to Ward
+  xyzwh 286 432 3005 153 73 max_width 15 label_xy 309 453
+end
+usecasecanvas 130434 usecase_ref 129410 // Adds Diagnosis Report
+  xyzwh 307 323 3005 155 65 max_width 14 label_xy 328 337
+end
+usecasecanvas 130690 usecase_ref 129538 // Removes Patient From Ward
+  xyzwh 294 536 3005 135 59 max_width 16 label_xy 301 551
+end
+line 129026 --->
+  from ref 128002 z 3006 to ref 128898
+line 129410 --->
+  from ref 128002 z 3006 to ref 129282
+line 129538 --->
+  from ref 129282 z 3006 to ref 128386
+line 129922 --->
+  from ref 128002 z 3006 to ref 129794
+line 130306 --->
+  from ref 129794 z 3006 to ref 128514
+line 130562 --->
+  from ref 128386 z 3006 to ref 130434
+line 130818 --->
+  from ref 128514 z 3006 to ref 130690
+end

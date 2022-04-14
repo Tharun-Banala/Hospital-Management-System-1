@@ -1,0 +1,185 @@
+format 224
+
+activitynodecanvas 128002 activitynode_ref 128002 // initial_node
+  xyz 409 2 2000
+end
+activitynodecanvas 128130 activitynode_ref 128130 // decision
+  xyz 237 168 2000
+end
+textcanvas 128386 "Patient appointment"
+  xyzwh 212 116 2000 139 15
+textcanvas 128770 "NEW
+"
+  xyzwh 138 186 2006 56 36
+activitynodecanvas 128898 activitynode_ref 128258 // join
+  horizontal  xyzwh 206 335 2000 75 15
+end
+textcanvas 129282 "OLD
+"
+  xyzwh 274 244 2000 41 30
+activitynodecanvas 129410 activitynode_ref 128386 // decision
+  xyz 231 420 2000
+end
+textcanvas 130562 "NEED NEW
+ APPOINTMENT"
+  xyzwh 36 440 2000 139 47
+textcanvas 130690 "NEED A VISIT
+ FOR OLD 
+APPOINTMENT
+"
+  xyzwh 295 450 2006 130 74
+activitynodecanvas 131202 activitynode_ref 128514 // decision
+  xyz 405 97 2000
+end
+activitynodecanvas 132610 activitynode_ref 128642 // decision
+  xyz 556 161 2000
+end
+textcanvas 133506 "Patient Info
+"
+  xyzwh 439 221 2000 86 49
+textcanvas 133890 "Doctor Info
+"
+  xyzwh 581 263 2000 55 38
+textcanvas 134146 "wards info
+"
+  xyzwh 670 248 2006 93 35
+textcanvas 134530 "Information"
+  xyzwh 503 122 2000 74 15
+activitynodecanvas 141826 activitynode_ref 131202 // activity_final
+  xyz 480 665 2000
+end
+activityactioncanvas 143234 activityaction_ref 128002 // activity action login
+  
+  show_opaque_action_definition default
+  xyzwh 379 38 2000 80 40
+end
+activityactioncanvas 143618 activityaction_ref 128130 // activity action Register Patient
+  
+  show_opaque_action_definition default
+  xyzwh 73 247 2000 100 60
+end
+activityactioncanvas 144386 activityaction_ref 128258 // activity action Create New Appointment
+  
+  show_opaque_action_definition default
+  xyzwh 89 528 2000 100 60
+end
+activityactioncanvas 144642 activityaction_ref 128386 // activity action Add Visit
+  
+  show_opaque_action_definition default
+  xyzwh 277 530 2000 100 60
+end
+activityactioncanvas 145154 activityaction_ref 128514 // activity action View Info
+  
+  show_opaque_action_definition default
+  xyzwh 414 329 2005 100 60
+end
+activityactioncanvas 145282 activityaction_ref 128642 // activity action View Info
+  
+  show_opaque_action_definition default
+  xyzwh 706 326 2000 100 60
+end
+activityactioncanvas 145410 activityaction_ref 128770 // activity action View Info
+  
+  show_opaque_action_definition default
+  xyzwh 533 327 2000 100 60
+end
+flowcanvas 128003 flow_ref 146562 // <flow>
+  
+  from ref 128130 z 2001 to ref 143618
+   write_horizontally default
+end
+flowcanvas 129154 flow_ref 128386 // <flow>
+  decenter_begin 639
+  decenter_end 600
+  
+  from ref 128130 z 2001 to ref 128898
+   write_horizontally default
+end
+flowcanvas 129794 flow_ref 128514 // <flow>
+  decenter_end 755
+  
+  from ref 128898 z 2001 to ref 129410
+   write_horizontally default
+end
+flowcanvas 131458 flow_ref 129154 // <flow>
+  decenter_begin 593
+  
+  from ref 131202 z 2001 to ref 128130
+   write_horizontally default
+end
+flowcanvas 132738 flow_ref 129538 // <flow>
+  
+  from ref 131202 z 2001 to ref 132610
+   write_horizontally default
+end
+flowcanvas 143362 flow_ref 146306 // <flow>
+  
+  from ref 128002 z 2001 to ref 143234
+   write_horizontally default
+end
+flowcanvas 143490 flow_ref 146434 // <flow>
+  
+  from ref 143234 z 2001 to ref 131202
+   write_horizontally default
+end
+flowcanvas 144130 flow_ref 146690 // <flow>
+  
+  from ref 128130 z 2001 to ref 143618
+   write_horizontally default
+end
+flowcanvas 144258 flow_ref 146818 // <flow>
+  
+  from ref 143618 z 2001 to ref 128898
+   write_horizontally default
+end
+flowcanvas 144514 flow_ref 146946 // <flow>
+  
+  from ref 129410 z 2001 to ref 144386
+   write_horizontally default
+end
+flowcanvas 144770 flow_ref 147074 // <flow>
+  
+  from ref 129410 z 2001 to ref 144642
+   write_horizontally default
+end
+flowcanvas 144898 flow_ref 147202 // <flow>
+  
+  from ref 144642 z 2001 to ref 141826
+   write_horizontally default
+end
+flowcanvas 145026 flow_ref 147330 // <flow>
+  
+  from ref 144386 z 2001 to ref 144642
+   write_horizontally default
+end
+flowcanvas 145538 flow_ref 147458 // <flow>
+  
+  from ref 132610 z 2006 to ref 145154
+   write_horizontally default
+end
+flowcanvas 145666 flow_ref 147586 // <flow>
+  
+  from ref 132610 z 2001 to ref 145410
+   write_horizontally default
+end
+flowcanvas 145794 flow_ref 147714 // <flow>
+  
+  from ref 132610 z 2001 to ref 145282
+   write_horizontally default
+end
+flowcanvas 145922 flow_ref 147842 // <flow>
+  
+  from ref 145154 z 2006 to ref 141826
+   write_horizontally default
+end
+flowcanvas 146050 flow_ref 147970 // <flow>
+  
+  from ref 145410 z 2001 to ref 141826
+   write_horizontally default
+end
+flowcanvas 146306 flow_ref 148098 // <flow>
+  
+  from ref 145282 z 2001 to ref 141826
+   write_horizontally default
+end
+end

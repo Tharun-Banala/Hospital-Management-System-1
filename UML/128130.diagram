@@ -1,0 +1,259 @@
+format 224
+
+activitynodecanvas 128002 activitynode_ref 128770 // initial_node
+  xyz 409 53 2000
+end
+activitynodecanvas 129154 activitynode_ref 129154 // decision
+  xyz 399 242 2000
+end
+textcanvas 129410 "[Clicked on View Details]"
+  xyzwh 199 253 2000 162 15
+textcanvas 130946 "No
+"
+  xyzwh 456 243 2006 20 33
+textcanvas 131074 "Yes
+"
+  xyzwh 426 295 2006 26 33
+activitynodecanvas 131202 activitynode_ref 129410 // decision
+  xyz 397 424 2000
+end
+activitynodecanvas 131842 activitynode_ref 129538 // decision
+  xyz 546 540 2000
+end
+activitynodecanvas 131970 activitynode_ref 129666 // decision
+  xyz 392 539 2000
+end
+textcanvas 132226 "View Medical 
+Report"
+  xyzwh 410 478 2006 57 61
+textcanvas 132482 "Exists
+"
+  xyzwh 354 586 2006 47 34
+activitynodecanvas 133378 activitynode_ref 129922 // decision
+  xyz 689 427 2000
+end
+textcanvas 133634 "View Lab reports"
+  xyzwh 483 474 2006 87 39
+textcanvas 134146 "Exists
+"
+  xyzwh 574 590 2006 69 26
+textcanvas 134658 "Assign to a Ward"
+  xyzwh 504 422 2000 111 15
+textcanvas 135170 "Visit
+ Not yet
+ closed"
+  xyzwh 736 485 2000 52 51
+textcanvas 135682 "Closed
+"
+  xyzwh 593 518 2006 76 23
+activitynodecanvas 139394 activitynode_ref 130562 // join
+  horizontal  xyzwh 415 699 2000 97 15
+end
+activitynodecanvas 141442 activitynode_ref 130690 // decision
+  xyz 129 423 2000
+end
+textcanvas 141698 "Add the medical Report
+"
+  xyzwh 179 414 2006 181 20
+textcanvas 142082 "Visit not yet closed"
+  xyzwh 163 479 2000 75 39
+textcanvas 142978 "Closed
+"
+  xyzwh 253 714 2008 82 47
+activitynodecanvas 143106 activitynode_ref 130818 // decision
+  xyz 271 544 2000
+end
+textcanvas 143746 "Does Not Exist"
+  xyzwh 476 571 2000 53 62
+textcanvas 144130 "Assign to Diagnosis"
+  xyzwh 281 468 2006 75 37
+textcanvas 144898 "Visit
+ Not yet
+ closed"
+  xyzwh 294 588 2000 52 51
+textcanvas 146306 "Closed
+"
+  xyzwh 35 716 2008 95 24
+activitynodecanvas 148098 activitynode_ref 130946 // activity_final
+  xyz 379 768 2000
+end
+activityactioncanvas 150658 activityaction_ref 128898 // activity action Show all Appointments of Doctor
+  
+  show_opaque_action_definition default
+  xyzwh 359 123 2000 114 74
+end
+activitynodecanvas 151042 activitynode_ref 139522 // activity_final
+  xyz 518 249 2000
+end
+activityactioncanvas 151298 activityaction_ref 129026 // activity action Show details of particular appointment
+  
+  show_opaque_action_definition default
+  xyzwh 356 326 2000 107 74
+end
+activityactioncanvas 151682 activityaction_ref 129154 // activity action Notify
+  
+  show_opaque_action_definition default
+  xyzwh 601 679 2007 100 60
+end
+activityactioncanvas 152706 activityaction_ref 129282 // activity action Assign to a ward type
+  
+  show_opaque_action_definition default
+  xyzwh 688 541 2015 100 60
+end
+activityactioncanvas 153090 activityaction_ref 129410 // activity action View Info
+  
+  show_opaque_action_definition default
+  xyzwh 511 612 2021 90 40
+end
+activityactioncanvas 153474 activityaction_ref 129538 // activity action Assign to diagnosis
+  
+  show_opaque_action_definition default
+  xyzwh 249 637 2013 100 60
+end
+activityactioncanvas 153858 activityaction_ref 129666 // activity action Accept the medical report file
+  
+  show_opaque_action_definition default
+  xyzwh 75 537 2006 100 65
+end
+flowcanvas 132098 flow_ref 131202 // <flow>
+  
+  from ref 131202 z 2001 to ref 131970
+   write_horizontally default
+end
+flowcanvas 133250 flow_ref 131586 // <flow>
+  decenter_end 243
+  
+  from ref 131202 z 2001 to ref 131842
+   write_horizontally default
+end
+flowcanvas 133506 flow_ref 131714 // <flow>
+  decenter_end 378
+  
+  from ref 131202 z 2001 to ref 133378
+   write_horizontally default
+end
+flowcanvas 139522 flow_ref 133122 // <flow>
+  geometry HV
+  decenter_begin 567
+  
+  from ref 131970 z 2001 to point 461 557
+  line 139778 z 2001 to ref 139394
+   write_horizontally default
+end
+flowcanvas 139650 flow_ref 133250 // <flow>
+  geometry VHr
+  decenter_end 516
+  
+  from ref 131842 z 2001 to point 463 556
+  line 140034 z 2001 to ref 139394
+   write_horizontally default
+end
+flowcanvas 141570 flow_ref 133634 // <flow>
+  
+  from ref 131202 z 2001 to ref 141442
+   write_horizontally default
+end
+flowcanvas 144002 flow_ref 134402 // <flow>
+  
+  from ref 131202 z 2001 to ref 143106
+   write_horizontally default
+end
+flowcanvas 145794 flow_ref 134658 // <flow>
+  
+  from ref 143106 z 2001 to point 199 638
+  line 146050 z 2001 to point 198 704
+  line 145922 z 2001 to ref 139394
+   write_horizontally default
+end
+flowcanvas 147330 flow_ref 135170 // <flow>
+  
+  from ref 141442 z 2001 to point 14 439
+  line 147714 z 2001 to point 15 705
+  line 147842 z 2001 to ref 139394
+   write_horizontally default
+end
+flowcanvas 150786 flow_ref 148226 // <flow>
+  
+  from ref 128002 z 2001 to ref 150658
+   write_horizontally default
+end
+flowcanvas 150914 flow_ref 148354 // <flow>
+  
+  from ref 150658 z 2001 to ref 129154
+   write_horizontally default
+end
+flowcanvas 151170 flow_ref 148482 // <flow>
+  
+  from ref 129154 z 2001 to ref 151042
+   write_horizontally default
+end
+flowcanvas 151426 flow_ref 148610 // <flow>
+  
+  from ref 129154 z 2001 to ref 151298
+   write_horizontally default
+end
+flowcanvas 151554 flow_ref 148738 // <flow>
+  
+  from ref 151298 z 2001 to ref 131202
+   write_horizontally default
+end
+flowcanvas 151810 flow_ref 148866 // <flow>
+  
+  from ref 133378 z 2008 to point 647 544
+  line 151938 z 2008 to ref 151682
+   write_horizontally default
+end
+flowcanvas 152066 flow_ref 148994 // <flow>
+  
+  from ref 139394 z 2008 to ref 151682
+   write_horizontally default
+end
+flowcanvas 152322 flow_ref 149122 // <flow>
+  
+  from ref 151682 z 2008 to point 800 704
+  line 152578 z 2008 to point 795 352
+  line 152450 z 2008 to ref 151298
+   write_horizontally default
+end
+flowcanvas 152834 flow_ref 149250 // <flow>
+  
+  from ref 133378 z 2016 to ref 152706
+   write_horizontally default
+end
+flowcanvas 152962 flow_ref 149378 // <flow>
+  
+  from ref 152706 z 2016 to ref 148098
+   write_horizontally default
+end
+flowcanvas 153218 flow_ref 149506 // <flow>
+  
+  from ref 131842 z 2022 to ref 153090
+   write_horizontally default
+end
+flowcanvas 153346 flow_ref 149634 // <flow>
+  
+  from ref 153090 z 2022 to ref 148098
+   write_horizontally default
+end
+flowcanvas 153602 flow_ref 149762 // <flow>
+  
+  from ref 143106 z 2014 to ref 153474
+   write_horizontally default
+end
+flowcanvas 153730 flow_ref 149890 // <flow>
+  
+  from ref 153474 z 2014 to ref 148098
+   write_horizontally default
+end
+flowcanvas 154242 flow_ref 150146 // <flow>
+  
+  from ref 141442 z 2007 to ref 153858
+   write_horizontally default
+end
+flowcanvas 154370 flow_ref 150274 // <flow>
+  
+  from ref 153858 z 2007 to point 120 775
+  line 154498 z 2007 to ref 148098
+   write_horizontally default
+end
+end

@@ -1,0 +1,100 @@
+format 224
+
+activitynodecanvas 128002 activitynode_ref 131330 // initial_node
+  xyz 425 36 2000
+end
+activitynodecanvas 128386 activitynode_ref 131458 // decision
+  xyz 428 229 2000
+end
+activitynodecanvas 129794 activitynode_ref 131586 // decision
+  xyz 522 337 2000
+end
+textcanvas 130050 "View Details"
+  xyzwh 489 281 2006 82 15
+textcanvas 130306 "Diagnostic report for that appointment exists"
+  xyzwh 548 382 2006 139 72
+activitynodecanvas 131074 activitynode_ref 131714 // decision
+  xyz 314 343 2000
+end
+textcanvas 131330 "Upload Report"
+  xyzwh 302 281 2000 66 39
+textcanvas 131458 "Doesn't exists"
+  xyzwh 572 336 2017 92 15
+textcanvas 131842 "VIsit not yet closed"
+  xyzwh 348 393 2000 88 46
+activitynodecanvas 132738 activitynode_ref 131842 // activity_final
+  xyz 440 594 2000
+end
+activityactioncanvas 133122 activityaction_ref 129794 // activity action All appointments diagnostic information
+  
+  show_opaque_action_definition default
+  xyzwh 361 112 2000 154 78
+end
+activityactioncanvas 133378 activityaction_ref 129922 // activity action Notify
+  
+  show_opaque_action_definition default
+  xyzwh 143 335 2000 100 60
+end
+activityactioncanvas 134018 activityaction_ref 130050 // activity action View Diagnostic report
+  
+  show_opaque_action_definition default
+  xyzwh 497 461 2000 107 71
+end
+activityactioncanvas 134402 activityaction_ref 130178 // activity action Allow to upload Diagnosis report
+  
+  show_opaque_action_definition default
+  xyzwh 297 468 2000 102 69
+end
+flowcanvas 129922 flow_ref 135938 // <flow>
+  
+  from ref 128386 z 2001 to ref 129794
+   write_horizontally default
+end
+flowcanvas 131202 flow_ref 136450 // <flow>
+  
+  from ref 128386 z 2001 to ref 131074
+   write_horizontally default
+end
+flowcanvas 133250 flow_ref 150402 // <flow>
+  
+  from ref 128002 z 2001 to ref 133122
+   write_horizontally default
+end
+flowcanvas 133506 flow_ref 150530 // <flow>
+  
+  from ref 131074 z 2001 to ref 133378
+   write_horizontally default
+end
+flowcanvas 133634 flow_ref 150658 // <flow>
+  geometry VH
+  
+  from ref 133378 z 2001 to point 190 148
+  line 133762 z 2001 to ref 133122
+   write_horizontally default
+end
+flowcanvas 133890 flow_ref 150786 // <flow>
+  
+  from ref 133122 z 2001 to ref 128386
+   write_horizontally default
+end
+flowcanvas 134146 flow_ref 150914 // <flow>
+  
+  from ref 129794 z 2001 to ref 134018
+   write_horizontally default
+end
+flowcanvas 134274 flow_ref 151042 // <flow>
+  
+  from ref 134018 z 2001 to ref 132738
+   write_horizontally default
+end
+flowcanvas 134530 flow_ref 151170 // <flow>
+  
+  from ref 131074 z 2001 to ref 134402
+   write_horizontally default
+end
+flowcanvas 135042 flow_ref 151298 // <flow>
+  
+  from ref 134402 z 2001 to ref 132738
+   write_horizontally default
+end
+end

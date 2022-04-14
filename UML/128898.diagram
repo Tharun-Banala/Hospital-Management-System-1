@@ -1,0 +1,63 @@
+format 224
+
+classinstancecanvas 128002 classinstance_ref 128002 // Receptionist
+  xyz 68 4 2005 life_line_z 2000
+end
+classinstance 128130 class_ref 129282 // Authentication
+  name ""   xyz 725 7 2005 life_line_z 2000
+classinstance 128642 class_ref 129410 // Login
+  name ""   xyz 641 5 2005 life_line_z 2000
+textcanvas 130306 "Id and password"
+  xyzwh 224 80 2020 74 40
+textcanvas 130434 "authenticate
+(id,password
+,receptionist)"
+  xyzwh 682 75 2015 210 65
+textcanvas 130562 "authenticated"
+  xyzwh 681 177 2020 89 15
+textcanvas 130690 "authentication failed"
+  xyzwh 681 478 2020 92 38
+textcanvas 130818 "logged in "
+  xyzwh 207 193 2025 64 15
+textcanvas 130946 "Try again"
+  xyzwh 204 512 2020 61 15
+durationcanvas 128770 classinstance_ref 128002 // Receptionist:Receptionist
+  xyzwh 146 112 2010 11 447
+end
+durationcanvas 128898 classinstance_ref 128642 // :Login
+  xyzwh 661 105 2010 11 438
+end
+durationcanvas 129154 classinstance_ref 128130 // :Authentication
+  xyzwh 774 121 2010 11 402
+end
+msg 129026 synchronous
+  from durationcanvas_ref 128770
+  to durationcanvas_ref 128898
+  yz 122 2025 unspecifiedmsg
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+msg 129282 synchronous
+  from durationcanvas_ref 128898
+  to durationcanvas_ref 129154
+  yz 131 2020 unspecifiedmsg
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+msg 129794 return
+  from durationcanvas_ref 129154
+  to durationcanvas_ref 128898
+  yz 191 2015 unspecifiedmsg
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+msg 129922 return
+  from durationcanvas_ref 128898
+  to durationcanvas_ref 128770
+  yz 211 2020 unspecifiedmsg
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+msg 130050 return
+  from durationcanvas_ref 129154
+  to durationcanvas_ref 128898
+  yz 512 2015 unspecifiedmsg
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+msg 130178 return
+  from durationcanvas_ref 128898
+  to durationcanvas_ref 128770
+  yz 532 2015 unspecifiedmsg
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+end
