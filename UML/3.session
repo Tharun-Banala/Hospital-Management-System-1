@@ -1,8 +1,0 @@
-window_sizes 1800 892 450 1344 702 128
-
-show_stereotypes
-selected activitydiagram_ref 128130 // Medical Assistant Perspective
-open
-  activity_ref 128002 // activity
-end
-end

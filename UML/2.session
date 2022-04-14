@@ -1,9 +1,0 @@
-window_sizes 1848 1016 433 1409 795 168
-cleanlooks_style
-show_stereotypes
-selected usecasediagram_ref 128514 // Patient Appointment
-open
-  activity_ref 128002 // activity
-  usecaseview_ref 128002 // usecaseview
-end
-end
